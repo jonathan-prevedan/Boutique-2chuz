@@ -39,7 +39,7 @@ if(isset($_SESSION['username']))
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="profil.php">Modifications Profil</a>
+            <a class="nav-link" href="libraries/profil.php">Modifications Profil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="produits.php">Produits</a>

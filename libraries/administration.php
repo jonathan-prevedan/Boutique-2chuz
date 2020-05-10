@@ -1,4 +1,6 @@
 <?php include("functions.php");
+require_once("header.php");
+
 
 
 $produit = new product;

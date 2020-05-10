@@ -1,4 +1,5 @@
 <?php
+require_once("header.php");
 
 	$imagenom=$produit->genererChaineAleatoire(10);
 

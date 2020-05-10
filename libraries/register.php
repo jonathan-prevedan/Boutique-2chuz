@@ -1,4 +1,5 @@
 <?php include("functions.php");
+require_once("header.php");
 
 // INCLUDE DES FONCTIONS AFIN DE REALISER LA CONNEXION
 

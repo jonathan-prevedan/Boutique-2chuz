@@ -97,10 +97,13 @@ public function connect($username,$password)
 
 // FONCTION MàJ DES INFOS_U
 
-public function update($username,$password,$nom,$prenom,$email)
-{
+public function update($id,$username,$password,$nom,$prenom,$email,$droit)
+{   
 	
-    $username=$_SESSION['username'];
+	$username=$_SESSION['username'];
+	$user=$_POST['user'];
+
+	
 	if($_SESSION['username'] != $username)
 	{			
 		$user = $this->db()->query("SELECT *FROM users WHERE login='$username'");
@@ -115,20 +118,25 @@ public function update($username,$password,$nom,$prenom,$email)
 	else 
 	{
 		if(strlen($password) >= 5)
-		{
-			$hash = sha1($password);
-			$update =  $this->db()->query("UPDATE users SET username='$username',password='$hash', nom='$nom', prenom='$prenom', email='$email', WHERE username='$username'");
-		
+		{ 
+			
+			$hash = password_hash($password, PASSWORD_DEFAULT);
+			$update = $this->db()->query("UPDATE users SET username='$user',password='$hash',nom='$nom',prenom='$prenom',email='$email',droit='$droit' WHERE id=$id");
+			//UPDATE users SET username='toto',password='',nom='toto',prenom='toto',email='toto@laplateforme.io',droit='admin' WHERE id=2
+			
+	
 		$this->username=$username;
 		$this->password=$hash;
 		$this->nom=$nom;
 		$this->prenom=$prenom;
 		$this->email=$email;
+		$this->id=$id;
+		
 		echo 't';
 
 		$msg = "gg";
-		unset($_SESSION['username']);
-		unset($_SESSION['password']);
+		//unset($_SESSION['username']);
+		//unset($_SESSION['password']);
 		
 		// header('location: connexion.php');
 		}
@@ -343,7 +351,7 @@ public function nameproduits($nom)
 public function update($nom, $cat, $souscat, $description, $prix, $img, $hauteur, $largeur, $id)
 	{
 		$descr=str_replace ( "'","''", $description);
-		$updateproduit =  $this->db()->query("UPDATE produits SET nom='$nom', id_categorie='$cat', id_sous_categorie='$souscat', description='$descr', prix='$prix' WHERE id='$id'");
+		$updateproduit =  $this->db()->query("UPDATE users SET nom='$nom', id_categorie=$cat, id_souscat=$souscat, description='$descr', prix='$prix' WHERE id=$id");
 
 		$updateimg= $this->db()->query("UPDATE images SET chemin='$img', hauteur='$hauteur', largeur='$largeur' WHERE id_produits='$id'");
 		

@@ -6,7 +6,8 @@
 		<meta charset="UTF-8">
 	</head>
 <body>
-	<?php 
+	<?php
+	require_once("header.php");
 	
 
 

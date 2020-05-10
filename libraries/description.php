@@ -1,4 +1,5 @@
-<?php include("functions.php");?>
+<?php include("functions.php");
+require_once("header.php");?>
 
 
 <html>
