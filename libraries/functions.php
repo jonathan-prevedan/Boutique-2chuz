@@ -149,7 +149,7 @@ public function update($id,$username,$password,$nom,$prenom,$email,$droit)
 		return $msg;  
 }
 
-// COMMENTAIRE AU 06.05 FONCTION UPDATE FONCTIONNE PAS DEVON JE COMPTE SUR TOI !
+
 
 
 // FONCTION RECUPERE TOUTES LES INFOS DE L'USER

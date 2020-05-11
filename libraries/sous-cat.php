@@ -19,12 +19,13 @@ require_once("header.php");?>
 		$produit = new product;
 		$tab=$produit -> categorie();
 		$tab1=$produit -> souscat();
+		var_dump($tab);
 		
 
 			for($i=0; $i < sizeof($tab1); $i++)
 			{
 			?>
-			<a href="produits.php?type=<?php echo $_GET['type'];?>&id=<?php  echo $_GET['id'];?>&marque=<?php echo $tab1[$i][1]; ?>&id2=<?php echo $tab[$i][0];?>"><img width="<?php echo $tab1[$i][4];?>" height="<?php echo $tab1[$i][3];?>" src="<?php echo $tab1[$i][2];?>"></a>
+			<a href="produits.php?type="><img width="<?php echo $tab1[$i][4];?>" src="<?php echo $tab1[$i][2];?>"></a>
 			<?php
 			}
 			?>

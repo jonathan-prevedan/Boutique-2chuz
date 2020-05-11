@@ -105,23 +105,89 @@ if(isset($_POST['supprimer']))
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link href="boutique.css" rel="stylesheet">
-            <title>Administration</title>
+			<title>Administration</title>
+			<style>
+				body 
+				{
+					background-color: rgb(37, 62, 99);
+				}
+				.row 
+				{
+					display:flex;
+					flex-wrap:wrap;
+					width:100%;
+					height:40%;
+				}
+				h1
+				{
+					text-align:center;
+					color:#CDD6D8;
+				}
+				.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: .75rem;
+	BOX-SHADOW: 1px 1px 1px 1px #CDD6D8;
+	background-color:#5370A5;
+				}
+				label
+				{
+					color:#CDD6D8;
+				}
+				</style>
 	</head>
-<body class="administration">
+
+	<body>
+	</head>
+<body>
+</br>
+	<h1>Gestion des produits</h1>
+			</br>
 
 
 <div class="option">
+
 	<form action="" method="get">
-		<input name="option" type="submit" value="Ajouter un produit">
-		<input name="option" type="submit" value="Ajouter Catégorie">
-		<input name="option" type="submit" value="Ajouter une Sous-catégorie">
+	<div class="form-group">
+    <label for="formGroupExampleInput">Ajouter un produit</label>
+    <input class="btn btn-light" name="option" type="submit" value="Ajouter un produit">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Ajouter Catégorie</label>
+    <input class="btn btn-light" name="option" type="submit" value="Ajouter Catégorie">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Ajouter une Sous-catégorie</label>
+    <input class="btn btn-light" name="option" type="submit" value="Ajouter une Sous-catégorie">
+  </div>
+		
+		
+		
 	</form>
+			
 	<form action="" method="get">
-		<input name="option" type="submit" value="Supprimer ou modifier un produit">
-		<input name="option" type="submit" value="Supprimer une Catégorie">
-		<input name="option" type="submit" value="Supprimer une Sous-catégorie">
-	</form>
+	<form action="" method="get">
+	<div class="form-group">
+    <label for="formGroupExampleInput">Supprimer ou modifier un produit</label>
+    <input class="btn btn-light" name="option" type="submit" value="Supprimer ou modifier un produit">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Supprimer une Catégorie</label>
+    <input  class="btn btn-light" name="option" type="submit" value="Supprimer une Catégorie">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Supprimer une Sous-catégorie</label>
+	<input class="btn btn-light" name="option" type="submit" value="Supprimer une Sous-catégorie">
+  </div>
+</form>
 </div>
+			</br>
 
 
 
@@ -136,11 +202,12 @@ if(isset($_POST['supprimer']))
 	<div class="adminform">
 		<form action="administration.php" method="post" enctype="multipart/form-data">
 		<div class="form">
-			<input name="nom" required type="text" placeholder="Nom du Produit">
+			<input  name="nom" required type="text" placeholder="Nom du Produit">
 			<input name="prix" required type="number" min="0.00" max="10000.00" step="0.01" placeholder="prix" />
 		</div>
 			<textarea name="description" required placeholder="description"></textarea>
 			<input required type="file" name="fileToUpload" id="fileToUpload">
+			<label>categorie</label>
 			<select name="categorie">
 				<?php 
 				for($i=0; $i < sizeof($tab); $i++)
@@ -151,6 +218,7 @@ if(isset($_POST['supprimer']))
 				}
 				?>
 			</select>
+			<label>sous_categorie</label>
 			<select name="sous_categorie">
 				<?php 
 				for($i=0; $i < sizeof($tab1); $i++)
@@ -169,7 +237,7 @@ if(isset($_POST['supprimer']))
 				<input name="largeur" required type="number" value="200">
 			</div>
 			<div class="choix">
-				<input type="submit" name="ajout_produit">
+				<input class="btn btn-light" type="submit" name="ajout_produit">
 			</div>
 		</form>
 	</div>
@@ -191,7 +259,7 @@ if(isset($_POST['supprimer']))
 					?>
 				</select>
 					<div class="choix">
-						<input type="submit" name="action" value="Valider">
+						<input class="btn btn-light" type="submit" name="action" value="Valider">
 					</div>
 			</form>
 		</div>
@@ -204,7 +272,7 @@ if(isset($_POST['supprimer']))
 				<form action="administration.php" method="post">
 					<input required placeholder="Nom de votre catégorie" type="text" name="nom_categorie">
 				<div class="choix">
-					<input type="submit" name="ajout_categorie" value="Ajouter">
+					<input class="btn btn-light" type="submit" name="ajout_categorie" value="Ajouter">
 				</div>
 				</form>
 			</div>
@@ -224,7 +292,7 @@ if(isset($_POST['supprimer']))
 						<input name="largeur" required type="number" value="200">
 					</div>
 					<div class="choix">
-						<input type="submit" name="ajout_sous_categorie" value="Ajouter">
+						<input class="btn btn-light" type="submit" name="ajout_sous_categorie" value="Ajouter">
 					</div>
 				</form>
 			</div>
@@ -248,7 +316,7 @@ if(isset($_POST['supprimer']))
 
 					</select>	
 					<div class="choix">
-						<input type="submit" name="supprimer_sous_categorie" value="Supprimer">
+						<input class="btn btn-light" type="submit" name="supprimer_sous_categorie" value="Supprimer">
 					</div>
 				</form>
 			</div>
@@ -272,7 +340,7 @@ if(isset($_POST['supprimer']))
 
 					</select>	
 					<div class="choix">
-						<input type="submit" name="supprimer_categorie" value="Supprimer">
+						<input class="btn btn-light" type="submit" name="supprimer_categorie" value="Supprimer">
 					</div>
 				</form>
 			</div>
@@ -327,8 +395,8 @@ if(isset($_POST['supprimer']))
 						<input name="largeur" required type="number" value="<?php echo $nomproduit[1][4];?>">
 					</div>
 					<div class="choix">
-						<input type="submit" value="Modifier "name="modifier">
-						<input type="submit" value="Supprimer" name="supprimer">
+						<input class="btn btn-light" type="submit" value="Modifier "name="modifier">
+						<input class="btn btn-light" type="submit" value="Supprimer" name="supprimer">
 					</div>
 				</form>
 			</div>
