@@ -109,7 +109,11 @@ if(isset($_POST['supprimer']))
 			<style>
 				body 
 				{
+					display:flex;
+					flex-direction:column;
 					background-color: rgb(37, 62, 99);
+					align-items:center;
+					text-align:center;
 				}
 				.row 
 				{
@@ -120,22 +124,11 @@ if(isset($_POST['supprimer']))
 				}
 				h1
 				{
+					padding-top:55px;
 					text-align:center;
 					color:#CDD6D8;
 				}
-				.card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-clip: border-box;
-    border-radius: .75rem;
-	BOX-SHADOW: 1px 1px 1px 1px #CDD6D8;
-	background-color:#5370A5;
-				}
+				
 				label
 				{
 					color:#CDD6D8;

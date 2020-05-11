@@ -42,6 +42,7 @@ $infos_user=$user->infosUser();
 				}
 				h1
 				{
+					padding-top:50px;
 					text-align:center;
 					color:#CDD6D8;
 				}

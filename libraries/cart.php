@@ -21,6 +21,7 @@ require_once("header.php");?>
 				}
 				h1
 				{
+					padding-top:50px;
 					text-align:center;
 					color:#CDD6D8;
 				}
@@ -75,7 +76,7 @@ require_once("header.php");?>
 	
 	$cart=$panier -> cart();
 
-	?></br>
+	?></br><h1>Votre panier </h1></br>
 	<div class="card" style="width: 18rem;">
 	<img src="..." class="card-img-top" alt="...">
 	<div class="card-body">

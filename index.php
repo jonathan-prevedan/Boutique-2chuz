@@ -7,7 +7,9 @@ $categorie = new product;
 $affichecat=$categorie->categorie();
 $news =$categorie->nouveautees();
 $resultat = $categorie->images();
+
 ?>
+
 
 
 <!DOCTYPE html>
@@ -26,6 +28,47 @@ $resultat = $categorie->images();
 
 <link href="libraries/boutique.css" rel="stylesheet">
   <title>Accueil 2Chuz'</title>
+  <style>
+				body 
+				{
+					background-color: rgb(37, 62, 99);
+					color:#CDD6D8;
+				}
+				.row 
+				{
+					display:flex;
+					flex-wrap:wrap;
+					width:100%;
+					height:40%;
+				}
+				h1
+				{
+					text-align:center;
+					color:#CDD6D8;
+				}
+				.table
+				{
+					color:#CDD6D8;
+				}
+				label
+				{
+					color:#CDD6D8;
+				}
+				.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    /* border: 1px solid rgba(0,0,0,.125); */
+    border-radius: .75rem;
+	BOX-SHADOW: 1px 1px 1px 1px #CDD6D8;
+	background-color:#5370A5;
+				}
+				</style>
 
 
 

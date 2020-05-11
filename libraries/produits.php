@@ -10,7 +10,8 @@ require_once("header.php");?>
     <html lang="fr">
 	    <head>
             <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="icon" type="image/png" href="img/476a5038defea9f3fa86cb13e9ebeb2d.png"/>
             <link href="boutique.css" rel="stylesheet">
 			<title>PRODUITS</title>
 			<style>
@@ -27,6 +28,7 @@ require_once("header.php");?>
 				}
 				h1
 				{
+					padding-top:55px;
 					text-align:center;
 					color:#CDD6D8;
 				}
