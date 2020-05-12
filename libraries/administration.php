@@ -1,4 +1,5 @@
-<?php include("functions.php");
+<?php 
+include("functions.php");
 require_once("header.php");
 
 
@@ -15,6 +16,10 @@ if($user -> infosUser()[0][6] != "admin")
 $tabproduits=$produit->produits();
 $tab=$produit->categorie();
 $tab1=$produit->souscat();
+$uti=$user->CmbUser();
+
+
+
 
 
 
@@ -126,6 +131,10 @@ if(isset($_POST['supprimer']))
 				{
 					padding-top:55px;
 					text-align:center;
+					color:#CDD6D8;
+				}
+				.table
+				{
 					color:#CDD6D8;
 				}
 				
@@ -341,7 +350,7 @@ if(isset($_POST['supprimer']))
 		}
 		}	
 		if(isset($_GET['nom']))
-				{
+		{
 				?>
 			<div class="adminform">
 				<form action="administration.php" method="post" enctype="multipart/form-data">
@@ -393,10 +402,60 @@ if(isset($_POST['supprimer']))
 					</div>
 				</form>
 			</div>
-				<?php
-				}
-				?>
-	
+	<?php
+		}
+	?>
+		</section>
+	</br>
+
+	<h1>Gestion Des Utilisateurs</h1>
+		<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Rang</th>
+				<th scope="col">Pseudo</th>
+				<th scope="col">Email</th>
+				<th scope="col">Droit</th>
+				<th scope="col">Supprimer??</th>
+				
+			</tr>
+		</thead>
+		
+	<?php
+		
+		
+		foreach($uti as $utili) 
+		{ 
+			 
+	?>
+		
+		
+		
+		
+		<tbody>
+			<tr>
+			<td><?php echo $utili[0] ; ?> </td>
+			<td><?php echo $utili[1] ; ?> </td>
+			<td><?php echo $utili[3] ; ?> </td>
+			<td><?php echo $utili[4] ; ?> </td>
+			<td>
+			<form method="post" action="" id="suppression">
+			<button type="submit" id="submit" name="suprr" value ="<?php echo $utili[0];?>">Supprimer</button></form>
+			</td>
+			</tr>
+		</tbody>
+	<?php
+	if(isset($_POST['suprr']))
+	{
+		$connect = mysqli_connect("localhost", "root", "", "boutique");
+        $delete="DELETE FROM users WHERE id = '".$_POST['suprr']."'";
+        $query=mysqli_query($connect,$delete);
+		
+	}
+		}
+	?>
+		</table> </br>
+		</section>
 	
 	
 

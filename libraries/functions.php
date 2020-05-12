@@ -175,6 +175,22 @@ public function infosUser()
     	return "Aucun utilisateur n'est connecté";
     }
 }
+//FONTION RECUPERE TOUT LES UTILIATEURS
+public function CmbUser()
+{
+	 
+	$tab=[];
+		
+		$infos =  $this->db()->query("SELECT *FROM users");
+		
+		while($cle = $infos->fetch())
+		{
+			array_push($tab, $cle);
+		}
+		
+        return $tab;
+    
+}
 
 // FONCTION QUI AFFICHE LES BONNES INFOS
 
@@ -214,7 +230,7 @@ public function delete()
 	{
 		include('connect.php');
 		$user=$_SESSION['username'];
-		$del =  $this->db()->query("DELETE FROM users WHERE username='$user'");
+		$del =  $this->db()->query("DELETE FROM users WHERE id='".$_POST['suprr']."'");
 		session_destroy();
 	}
 
