@@ -54,6 +54,8 @@ if($description_produit==false)
 	header('Location: index.php');
 }
 ?>
+</br>
+</br>
 
 <div class="infos_produit">
 	<div class="image_produit">

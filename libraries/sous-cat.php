@@ -53,22 +53,23 @@
 <?php include("functions.php");
 require_once("header.php");?>
 
-
-
+			</br></br></br>
+<div class="container-fluid">
 <div class="sous_categorie">
 	<div>
 		<?php
 		$produit = new product;
 		$tab=$produit -> categorie();
 		$tab1=$produit -> souscat();
-		var_dump($tab);
+		
 		
 
 			for($i=0; $i < sizeof($tab1); $i++)
 			{
-			?>
-			<a href="produits.php?type="><img width="<?php echo $tab1[$i][4];?>" src="<?php echo $tab1[$i][2];?>"></a>
-			<?php
+				
+			?><div class="row justify-content-center">
+			<a href="produits.php?type="><img width="<?php echo $tab1[$i][4];?>" src="<?php echo $tab1[$i][2];?>"><?php echo $tab1[$i][1];?></a>
+			</div><?php
 			}
 			?>
 	</div>

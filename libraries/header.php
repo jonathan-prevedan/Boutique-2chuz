@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html lang="fr">
 	    <head>
-            <meta charset="UTF-8">
+      <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="icon" type="image/png" href="../img/476a5038defea9f3fa86cb13e9ebeb2d.png"/>
 			
@@ -28,8 +28,10 @@ if(isset($_SESSION['username']))
 {
    ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<img src="img/476a5038defea9f3fa86cb13e9ebeb2d.png" height="55px" width="75px";>
+<a class="navbar-brand" href="../index.php">2ChoeZ'</a>
     <div class="container">
-      <a class="navbar-brand" href="#">2Chuz'</a>
+      
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -73,7 +75,7 @@ else
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">2Chuz'</a>
+      <a class="navbar-brand" href="#">2ChoeZ''</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

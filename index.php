@@ -29,45 +29,34 @@ $resultat = $categorie->images();
 <link href="libraries/boutique.css" rel="stylesheet">
   <title>Accueil 2Chuz'</title>
   <style>
-				body 
-				{
-					background-color: rgb(37, 62, 99);
-					color:#CDD6D8;
-				}
-				.row 
-				{
-					display:flex;
-					flex-wrap:wrap;
-					width:100%;
-					height:40%;
-				}
-				h1
-				{
-					text-align:center;
-					color:#CDD6D8;
-				}
-				.table
-				{
-					color:#CDD6D8;
-				}
-				label
-				{
-					color:#CDD6D8;
-				}
-				.card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-clip: border-box;
-    /* border: 1px solid rgba(0,0,0,.125); */
-    border-radius: .75rem;
-	BOX-SHADOW: 1px 1px 1px 1px #CDD6D8;
-	background-color:#5370A5;
-				}
+	body 
+	{
+		background-color: rgb(37, 62, 99);
+		color:#CDD6D8;
+	}
+	.row 
+	{
+		display:flex;
+		flex-wrap:wrap;
+		width:100%;
+		height:40%;
+	}
+	h1
+	{
+  padding-top:55px;
+	text-align:center;
+	color:#CDD6D8;
+  }
+  .col
+  {
+    text-align:center;
+  }
+	
+	label
+	{
+		color:#CDD6D8;
+	}
+  
 				</style>
 
 
@@ -77,15 +66,16 @@ $resultat = $categorie->images();
 <body>
 
 
-  <!-- Page Content -->
-  <div class="container">
+ 
     <p>NOS NOUVEAUTEES</p>
-    <div class="row">
+    
 
-      <div class="col-lg-3">
+      <div class="col">
 
-        <h1 class="my-4">2Chuz'</h1>
-        <div class="list-group">
+        <h1>Bienvenue sur 2Choez'</h1>
+        <p>Nos Nouveautées</p>
+</br>
+        
           
           <?php  for($i=0; $i < sizeof($affichecat); $i++)
           {
@@ -97,85 +87,96 @@ $resultat = $categorie->images();
         </div>
 
       </div>
-      <!-- /.col-lg-3 -->
+        </br>
+      
 
-      <div class="col-lg-9">
-
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
           
           <?php 
           
           for($i=0; $i < sizeof($news); $i++)
           {
-            ?>
-            <div class="col-lg-9">
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" src="<?php 
-              
-              
-              echo $news[$i][0]; ?>" alt="First slide">
-            </div>
             
-          </div>
+            ?>
+            
+            
           <?php
           }
           
-?>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
+?><div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+  <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+</ol>
+<div class="carousel-inner">
+  <div class="carousel-item active">
+         
           <?php 
-for($i=0; $i < sizeof($news); $i++)
+          
+for($i=0; $i < 1; $i++)
+{ 
+?>
+
+
+<a href="libraries/description.php?id=<?php echo  $resultat[$i][2];?>">
+      <img height="<?php echo $resultat[$i][5];?>" width="<?php echo $resultat[$i][6];?>" 
+      src="<?php echo $resultat[$i][8];?>"><img src="<?php $news[$i][0]; ?>" alt=""class="d-block w-100" alt="..."></a>
+    <div class="carousel-caption d-none d-md-block">
+      <h5><?php echo $resultat[$i][3];?></h5>
+      <p><?php echo $resultat[$i][7];?></p>
+    </div>
+  </div>
+  <?php
+}
+?>
+<?php
+for($i=1; $i < 2; $i++)
 {
 ?>
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="libraries/description.php?id=<?php echo  $resultat[$i][2];?>"><img height="<?php echo $resultat[$i][5];?>" width="<?php echo $resultat[$i][6];?>" src="<?php echo $resultat[$i][8];?>"><img class="card-img-top" src="<?php $news[$i][0]; ?>" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#"><?php echo $news[$i][1]; ?> </a>
-                </h4>
-                
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-          <?php
-}
-          ?>
-
-        </div>
-        <!-- /.row -->
-
-      </div>
-      <!-- /.col-lg-9 -->
-
+<div class="carousel-item">
+  <a href="libraries/description.php?id=<?php echo  $resultat[$i][2];?>">
+      <img height="<?php echo $resultat[$i][5];?>" width="<?php echo $resultat[$i][6];?>" 
+      src="<?php echo $resultat[$i][8];?>"><img src="<?php $news[$i][0]; ?>" alt=""></a>
+    <div class="carousel-caption d-none d-md-block">
+      <h5><?php echo $resultat[$i][3];?></h5>
+      <p><?php echo $resultat[$i][7];?></p>
     </div>
-    <!-- /.row -->
-
   </div>
-  <!-- /.container -->
+  <?php
+  }
+  ?>
+  <?php
+  for($i=2; $i < 3; $i++)
+  {?>
+  <div class="carousel-item">
+  <a href="libraries/description.php?id=<?php echo  $resultat[$i][2];?>">
+      <img height="<?php echo $resultat[$i][5];?>" width="<?php echo $resultat[$i][6];?>" 
+      src="<?php echo $resultat[$i][8];?>"><img src="<?php $news[$i][0]; ?>" alt=""></a>
+    <div class="carousel-caption d-none d-md-block">
+      <h5><?php echo $resultat[$i][3];?></h5>
+      <p><?php echo $resultat[$i][7];?></p>
+    </div>
+  </div>
+</div>
+<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+</a>
+</div>
+      
+<?php             
+}
+         
+?>
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
+  <footer class="py-5 bg-dark fixed-bottom">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+      <p class="m-0 text-center text-white">Copyright &copy; Jo&Dev 2019</p>
     </div>
     <!-- /.container -->
   </footer>
